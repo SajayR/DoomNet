@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Doomnet · Live tensor network</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <main>
+    <header><div><span class="tag">CONSTRUCTED NETWORK</span><h1>DOOMNET</h1></div><span id="status" aria-live="polite">Loading model…</span></header>
+    <div class="viewport"><canvas id="frame" tabindex="0" aria-label="Live Doom network output"></canvas><div id="overlay"><strong>Enter the Hangar</strong><span>Click Start, then choose your own path.</span></div></div>
+    <div class="toolbar"><button id="toggle" disabled>Start</button><label><input type="checkbox" id="mouse"> Mouse look</label><span id="metrics">Waiting for the first RGB frame</span></div>
+    <p class="help"><b>WASD</b> move · <b>← →</b> turn · <b>Shift</b> run · <b>Space / click</b> fire · <b>E</b> use · <b>R</b> restart · <b>1 2 3</b> weapons · <b>P / Esc</b> pause</p>
+    <details><summary>Touch controls</summary><div class="touch">
+      <button data-key="KeyW">Forward</button><button data-key="KeyS">Back</button><button data-key="KeyA">Strafe left</button><button data-key="KeyD">Strafe right</button><button data-key="ArrowLeft">Turn left</button><button data-key="ArrowRight">Turn right</button><button data-key="ShiftLeft">Run</button><button data-key="Space">Fire</button><button data-key="KeyE">Use</button><button data-key="KeyR">Restart</button><button data-weapon="0">Fist</button><button data-weapon="1">Pistol</button><button data-weapon="2">Shotgun</button>
+    </div></details>
+    <p class="boundary">Every game pixel, map interaction, and state transition is computed by the frozen model. This page sends live controls and timing and presents completed RGB.</p>
+    <p id="error" role="alert" hidden></p>
+  </main>
+</body>
+</html>

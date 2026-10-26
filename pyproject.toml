@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "doomnet"
+version = "0.1.0"
+description = "Original E1M1 gameplay in a directly constructed, frozen tensor network"
+requires-python = ">=3.11"
+dependencies = ["torch>=2.5", "numpy>=1.26", "pillow>=10", "pygame>=2.6", "psutil>=6"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.scripts]
+doomnet = "doomnet.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["doomnet*"]
+
+[tool.setuptools.package-data]
+doomnet = ["web/*.html", "web/*.js", "web/*.css"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
